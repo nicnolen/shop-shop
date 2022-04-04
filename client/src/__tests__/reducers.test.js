@@ -4,6 +4,12 @@ import {
   UPDATE_PRODUCTS,
   UPDATE_CATEGORIES,
   UPDATE_CURRENT_CATEGORY,
+  ADD_TO_CART,
+  ADD_MULTIPLE_TO_CART,
+  REMOVE_FROM_CART,
+  UPDATE_CART_QUANTITY,
+  CLEAR_CART,
+  TOGGLE_CART,
 } from '../utils/actions';
 
 //! Import reducers
@@ -13,7 +19,20 @@ import { reducer } from '../utils/reducers';
 const initialState = {
   products: [],
   categories: [{ name: 'Food' }],
-  currentCategory: '1', // refers to the index of the categories array
+  currentCategory: '1',
+  cart: [
+    {
+      _id: '1',
+      name: 'Soup',
+      purchaseQuantity: 1,
+    },
+    {
+      _id: '2',
+      name: 'Bread',
+      purchaseQuantity: 2,
+    },
+  ],
+  cartOpen: false,
 };
 
 //! Test for updating products list
@@ -58,4 +77,15 @@ test('UPDATE_CURRENT_CATEGORY', () => {
   expect(newState.currentCategory).toBe('2');
   //* Make sure initial state did not change
   expect(initialState.currentCategory).toBe('1');
+});
+
+//! Test to add product to cart
+test('ADD_TO_CART', () => {
+  let newState = reducer(initialState, {
+    type: ADD_TO_CART,
+    product: { purchaseQuantity: 1 },
+  });
+
+  expect(newState.cart.length).toBe(3);
+  expect(initialState.cart.length).toBe(2);
 });
