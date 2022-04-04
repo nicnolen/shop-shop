@@ -1,4 +1,4 @@
-//TODO: SIGNUP PAGE
+//TODO: SIGNUP PAGE COMPONENT
 //! Import dependencies
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';

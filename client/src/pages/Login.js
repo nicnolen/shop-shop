@@ -1,4 +1,4 @@
-//TODO: LOGIN PAGE
+//TODO: LOGIN PAGE COMPONENT
 //! Import dependencies
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
