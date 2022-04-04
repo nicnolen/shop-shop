@@ -36,14 +36,19 @@ export const reducer = (state, action) => {
         ...state,
         currentCategory: action.currentCategory,
       };
-    //* if action type value is the value of `ADD_TO_CART`, return a new state object with an updated cart array
+    //* if action type value is the value of `ADD_TO_CART`, return a new state object with an updated cart array and the products
     case ADD_TO_CART:
       return {
         ...state, // preserve everything else on state
         cartOpen: true, // users can immediately view the cart with the newly added items
         cart: [...state.cart, action.product],
       };
-
+    //* if action type value is the value of `ADD_MULTIPLE_TO_CART`, return a new state object with an updated cart array and the products
+    case ADD_MULTIPLE_TO_CART:
+      return {
+        ...state,
+        cart: [...state.cart, ...action.products],
+      };
     //* if it's none of these actions, do not update state at all and keep things the same
     default:
       return state;
