@@ -61,6 +61,18 @@ export const reducer = (state, action) => {
         cartOpen: newState.length > 0, // set cartOpen to true as long as the newState length is > 0
         cart: newState,
       };
+    //* Reducer function for action type value `UPDATE_CART_QUANTITY`
+    case UPDATE_CART_QUANTITY:
+      return {
+        ...state,
+        cartOpen: true,
+        cart: state.cart.map(product => {
+          if (action._id === product._id) {
+            product.purchaseQuantity = action.purchaseQuantity;
+          }
+          return product;
+        }),
+      };
     //* if it's none of these actions, do not update state at all and keep things the same
     default:
       return state;
