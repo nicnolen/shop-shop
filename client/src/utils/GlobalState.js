@@ -19,3 +19,10 @@ const StoreProvider = ({ value = [], ...props }) => {
   return <Provider value={[state, dispatch]} {...props} />;
 };
 
+//! Function to be used by the components that need the data from the StoreProvider function
+const useStoreContext = () => {
+  return useContext(StoreContext);
+};
+
+//! Export StoreProvide and useStoreContext
+export { StoreProvider, useStoreContext };
