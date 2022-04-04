@@ -6,6 +6,9 @@ import {
   UPDATE_CURRENT_CATEGORY,
 } from '../utils/actions';
 
+//! Import reducers
+import { reducer } from '../utils/reducers';
+
 //! Create a sample of what global state will look like
 const initialState = {
   products: [],
@@ -21,7 +24,7 @@ test('UPDATE_PRODUCTS', () => {
   });
 
   //* check to make sure products were added to the new state
-  expect(newState.products.length).toBe(2); 
+  expect(newState.products.length).toBe(2);
   //* check to make sure initial state didnt change
   expect(initialState.products.length).toBe(0);
 });
