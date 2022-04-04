@@ -73,6 +73,13 @@ export const reducer = (state, action) => {
           return product;
         }),
       };
+    //* Reducer function for action type value `CLEAR_CART`
+    case CLEAR_CART:
+      return {
+        ...state,
+        cartOpen: false,
+        cart: [],
+      };
     //* if it's none of these actions, do not update state at all and keep things the same
     default:
       return state;
