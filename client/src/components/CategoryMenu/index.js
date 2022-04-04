@@ -1,4 +1,4 @@
-//TODO: CATEGORY MENU COMPONENT
+//TODO: CATEGORY MENU COMPONENT KEEPS TRACK OF CATEGORY LIST FROM APOLLO QUERY
 //! Import dependencies
 import React from 'react';
 import { useQuery } from '@apollo/client';

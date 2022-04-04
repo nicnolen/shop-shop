@@ -1,4 +1,4 @@
-//TODO: PRODUCT LIST COMPONENT
+//TODO: PRODUCT LIST COMPONENT DISPLAYS PRODUCTS FROM APOLLO QUERY
 //! Import dependencies
 import React from 'react';
 import { useQuery } from '@apollo/client';
@@ -18,9 +18,7 @@ function ProductList({ currentCategory }) {
       return products;
     }
 
-    return products.filter(
-      (product) => product.category._id === currentCategory
-    );
+    return products.filter(product => product.category._id === currentCategory);
   }
 
   return (
@@ -28,7 +26,7 @@ function ProductList({ currentCategory }) {
       <h2>Our Products:</h2>
       {products.length ? (
         <div className="flex-row">
-          {filterProducts().map((product) => (
+          {filterProducts().map(product => (
             <ProductItem
               key={product._id}
               _id={product._id}
