@@ -140,3 +140,14 @@ test('UPDATE_CART_QUANTITY', () => {
 
   expect(initialState.cartOpen).toBe(false);
 });
+
+//! Test to clear cart
+test('CLEAR_CART', () => {
+  let newState = reducer(initialState, {
+    type: CLEAR_CART,
+  });
+
+  expect(newState.cartOpen).toBe(false);
+  expect(newState.cart.length).toBe(0);
+  expect(initialState.cart.length).toBe(2);
+});
