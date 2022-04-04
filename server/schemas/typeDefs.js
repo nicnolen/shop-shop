@@ -1,3 +1,5 @@
+"TODO: TYPE DEFINITIONS"
+"Import dependencies"
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`

@@ -1,3 +1,5 @@
+//TODO: PRODUCT LIST COMPONENT
+//! Import dependencies
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
@@ -5,6 +7,7 @@ import ProductItem from '../ProductItem';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import spinner from '../../assets/spinner.gif';
 
+//! Create ProductList component
 function ProductList({ currentCategory }) {
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 

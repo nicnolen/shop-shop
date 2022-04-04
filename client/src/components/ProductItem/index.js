@@ -1,7 +1,10 @@
+//TODO: PRODUCT ITEM COMPONENT
+//! Import dependencies
 import React from "react";
 import { Link } from "react-router-dom";
 import { pluralize } from "../../utils/helpers"
 
+//! Create ProductItem component
 function ProductItem(item) {
   const {
     image,

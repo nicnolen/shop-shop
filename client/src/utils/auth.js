@@ -1,3 +1,5 @@
+//TODO: DECODE JSON WEB TOKEN (JWT)
+//! Import dependencies
 import decode from 'jwt-decode';
 
 class AuthService {

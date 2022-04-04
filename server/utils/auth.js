@@ -1,3 +1,5 @@
+//TODO: AUTHORIZE JSON WEB TOKEN (JWT)
+//! Import dependencies
 const jwt = require('jsonwebtoken');
 
 const secret = 'mysecretsshhhhh';

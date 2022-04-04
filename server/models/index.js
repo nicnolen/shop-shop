@@ -1,3 +1,5 @@
+//TODO: BUNDLE UP MODELS
+//! Import models
 const User = require('./User');
 const Product = require('./Product');
 const Category = require('./Category');

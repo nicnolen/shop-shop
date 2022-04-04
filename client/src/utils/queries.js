@@ -1,3 +1,5 @@
+"TODO: QUERIES"
+"Import dependencies"
 import { gql } from '@apollo/client';
 
 export const QUERY_PRODUCTS = gql`

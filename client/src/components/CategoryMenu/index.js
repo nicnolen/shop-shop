@@ -1,7 +1,10 @@
+//TODO: CATEGORY MENU COMPONENT
+//! Import dependencies
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_CATEGORIES } from '../../utils/queries';
 
+//! Create CategoryMenu component function
 function CategoryMenu({ setCategory }) {
   const { data: categoryData } = useQuery(QUERY_CATEGORIES);
   const categories = categoryData?.categories || [];

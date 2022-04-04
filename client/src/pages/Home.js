@@ -1,3 +1,5 @@
+//TODO: HOME PAGE
+//! Import dependencies
 import React, { useState } from "react";
 import ProductList from "../components/ProductList";
 import CategoryMenu from "../components/CategoryMenu";

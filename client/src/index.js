@@ -1,3 +1,5 @@
+//TODO: COMPONENT TO ACCESS THE DOM
+//! Import dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
