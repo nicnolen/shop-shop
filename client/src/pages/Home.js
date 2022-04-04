@@ -1,19 +1,15 @@
 //TODO: HOME PAGE COMPONENT KEEPS TRACK OF CURRENT CATEGORY WE ARE VIEWING
 //! Import dependencies
-import React, { useState } from "react";
-import ProductList from "../components/ProductList";
-import CategoryMenu from "../components/CategoryMenu";
+import React, { useState } from 'react';
+import ProductList from '../components/ProductList';
+import CategoryMenu from '../components/CategoryMenu';
 
 //! Create Home component
 const Home = () => {
-  const [currentCategory, setCategory] = useState("");
-
   return (
     <div className="container">
-      {/* Set the currentCategory to be passed to the ProductList component */}
-      <CategoryMenu setCategory={setCategory} />
-      {/* currentCategory instructs which category's products should be retrieved using Apollo */}
-      <ProductList currentCategory={currentCategory} />
+      <CategoryMenu />
+      <ProductList />
     </div>
   );
 };
