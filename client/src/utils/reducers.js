@@ -1,4 +1,6 @@
 //TODO: REDUX REDUCERS
+//! Import dependencies
+import { useReducer } from 'react';
 
 //! Import actions
 import {
@@ -34,3 +36,8 @@ export const reducer = (state, action) => {
       return state;
   }
 };
+
+//! Export reducers
+export function useProductReducer(initialState) {
+  return useReducer(reducer, initialState);
+}
