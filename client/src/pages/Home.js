@@ -1,6 +1,6 @@
 //TODO: HOME PAGE COMPONENT KEEPS TRACK OF CURRENT CATEGORY WE ARE VIEWING
 //! Import dependencies
-import React, { useState } from 'react';
+import React from 'react';
 import ProductList from '../components/ProductList';
 import CategoryMenu from '../components/CategoryMenu';
 import Cart from '../components/Cart';
