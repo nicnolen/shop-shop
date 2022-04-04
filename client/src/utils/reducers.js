@@ -7,6 +7,12 @@ import {
   UPDATE_PRODUCTS,
   UPDATE_CATEGORIES,
   UPDATE_CURRENT_CATEGORY,
+  ADD_TO_CART,
+  ADD_MULTIPLE_TO_CART,
+  REMOVE_FROM_CART,
+  UPDATE_CART_QUANTITY,
+  CLEAR_CART,
+  TOGGLE_CART,
 } from './actions';
 
 //! Reducer function to update products list
@@ -29,6 +35,13 @@ export const reducer = (state, action) => {
       return {
         ...state,
         currentCategory: action.currentCategory,
+      };
+    //* if action type value is the value of `ADD_TO_CART`, return a new state object with an updated cart array
+    case ADD_TO_CART:
+      return {
+        ...state, // preserve everything else on state
+        cartOpen: true, // users can immediately view the cart with the newly added items
+        cart: [...state.cart, action.product],
       };
 
     //* if it's none of these actions, do not update state at all and keep things the same
