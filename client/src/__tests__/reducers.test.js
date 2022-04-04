@@ -126,3 +126,17 @@ test('REMOVE_FROM_CART', () => {
 
   expect(initialState.cart.length).toBe(2);
 });
+
+//! Test to update item quantities
+test('UPDATE_CART_QUANTITY', () => {
+  let newState = reducer(initialState, {
+    type: UPDATE_CART_QUANTITY,
+    _id: '1', // make sure only the first items quantity is updated
+    purchaseQuantity: 3,
+  });
+  expect(newState.cartOpen).toBe(true);
+  expect(newState.cart[0].purchaseQuantity).toBe(3);
+  expect(newState.cart[1].purchaseQuantity).toBe(2);
+
+  expect(initialState.cartOpen).toBe(false);
+});
