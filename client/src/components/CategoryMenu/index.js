@@ -27,8 +27,15 @@ function CategoryMenu() {
       categoryData.categories.forEach(category => {
         idbPromise('categories', 'put', category);
       });
+    } else if (!loading) {
+      idbPromise('category', 'get').then(categories => {
+        dispatch({
+          type: UPDATE_CATEGORIES,
+          categories: categories,
+        });
+      });
     }
-  }, [categoryData, dispatch]);
+  }, [categoryData, loading, dispatch]);
 
   //* update the click handler to update our global state instead of using the function we receive as a prop from the Home component
   const handleClick = id => {
