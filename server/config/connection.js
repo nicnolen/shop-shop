@@ -1,3 +1,5 @@
+//TODO: MONGOOSE CONNECTION 
+//! Import dependencies
 const mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mernshopping', {

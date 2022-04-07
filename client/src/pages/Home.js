@@ -1,14 +1,17 @@
-import React, { useState } from "react";
-import ProductList from "../components/ProductList";
-import CategoryMenu from "../components/CategoryMenu";
+//TODO: HOME PAGE COMPONENT KEEPS TRACK OF CURRENT CATEGORY WE ARE VIEWING
+//! Import dependencies
+import React from 'react';
+import ProductList from '../components/ProductList';
+import CategoryMenu from '../components/CategoryMenu';
+import Cart from '../components/Cart';
 
+//! Create Home component
 const Home = () => {
-  const [currentCategory, setCategory] = useState("");
-
   return (
     <div className="container">
-      <CategoryMenu setCategory={setCategory} />
-      <ProductList currentCategory={currentCategory} />
+      <CategoryMenu />
+      <ProductList />
+      <Cart />
     </div>
   );
 };

@@ -1,5 +1,8 @@
+//TODO: JUMBOTRON COMPONENT
+//! Import dependencies
 import React from "react";
 
+//! Make the Jumbotron component
 function Jumbotron({ children }) {
   return (
     <div

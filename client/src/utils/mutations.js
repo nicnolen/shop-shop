@@ -1,3 +1,5 @@
+"TODO: MUTATIONS"
+"Import dependencies"
 import { gql } from '@apollo/client';
 
 export const LOGIN = gql`
