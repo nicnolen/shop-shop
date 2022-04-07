@@ -1,6 +1,7 @@
 //TODO: CATEGORY MENU COMPONENT KEEPS TRACK OF CATEGORY LIST FROM APOLLO QUERY
 //! Import dependencies
 import React, { useEffect } from 'react';
+import { idbPromise } from '../../utils/helpers';
 import {
   UPDATE_CATEGORIES,
   UPDATE_CURRENT_CATEGORY,
@@ -13,7 +14,7 @@ import { useStoreContext } from '../../utils/GlobalState';
 function CategoryMenu() {
   const [state, dispatch] = useStoreContext();
   const { categories } = state;
-  const { data: categoryData } = useQuery(QUERY_CATEGORIES);
+  const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
   useEffect(() => {
     //* if categoryData exists of has changed from the response of useQuery, then run dispatch()
@@ -23,6 +24,9 @@ function CategoryMenu() {
         type: UPDATE_CATEGORIES,
         categories: categoryData.categories,
       });
+      categoryData.categories.forEach(category => {
+        idbPromise('categories', 'put', category);
+      });
     }
   }, [categoryData, dispatch]);
 
@@ -30,7 +34,7 @@ function CategoryMenu() {
   const handleClick = id => {
     dispatch({
       type: UPDATE_CURRENT_CATEGORY,
-      currentCategory: id
+      currentCategory: id,
     });
   };
 
