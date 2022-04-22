@@ -12,7 +12,7 @@
 
 ## Description
 
-E-commerce application that sells some of the finest items available on the internet with the ability to shop offline and process secure online payments through a service called Stripe.
+An E-commerce application that sells some of the finest items available on the internet with the ability to shop offline and process secure online payments through a service called Stripe.
 
 ## Usage Instructions
 
