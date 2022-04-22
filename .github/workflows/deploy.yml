@@ -18,7 +18,10 @@ jobs:
           node-version: 16.x
       # build the app. CI (continuous integration build) runs npm install, npm build and npm test
       - name: Continuous Integration Build
-        run: npm ci
+        run: |
+          npm ci
+          npm run build
+          npm test
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.12.11
         with:
