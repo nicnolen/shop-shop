@@ -16,7 +16,7 @@ An E-commerce application that sells some of the finest items available on the i
 
 ## Usage Instructions
 
-To use, follow the [Heroku Link](https://dry-shelf-71701.herokuapp.com/).
+To use, follow the [Heroku Link](https://shop--shop.herokuapp.com/).
 
 ## License
 
